@@ -71,4 +71,11 @@ total decimal(10,2)
 foreign key(id_factura) references facturacion(id_factura)
 )
 
+create table usuario(
+id_usuario int identity(1,1) primary key,
+usuario nvarchar(50) unique,
+contrasena nvarchar(50),
+tipo nvarchar(10)
+)
+
 select * from categoria
