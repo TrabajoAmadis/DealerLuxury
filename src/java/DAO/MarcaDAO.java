@@ -11,6 +11,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -39,26 +40,23 @@ public class MarcaDAO {
     }
     
     //Metodo para obtener todas las marcas
-    public static ArrayList<Marca> listarMarca(){
-        try {
-            String sql = "select * from marcas";
+    public List listarMarca(){
+        ArrayList<Marca>list = new ArrayList<>();
+        String sql = "select * from marcas";
+        try {            
             Connection con = Conexion.conectar();
             PreparedStatement st = con.prepareStatement(sql);
-            ResultSet resultado = st.executeQuery();
-            ArrayList<Marca> lista = null;
-            Marca marca;
+            ResultSet resultado = st.executeQuery();         
+            Marca marca = new Marca();
             while(resultado.next()){
                 marca = new Marca();
                 marca.setIdMarca(resultado.getInt("id_marca"));
                 marca.setMarca(resultado.getString("nombre"));
-                lista.add(marca);
-            }
-            con.close();
-            st.close();
-            resultado.close();
-            return lista;
+                list.add(marca);
+            }            
+            return list;
         } catch (SQLException ex) {
-            return null;
+            return list;
         }
     }
     

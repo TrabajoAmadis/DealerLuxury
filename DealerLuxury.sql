@@ -31,6 +31,10 @@ id_marca int IDENTITY(1,1) PRIMARY KEY,
 nombre varchar(50) unique
 )
 
+insert into marcas values('Toyota')
+insert into marcas values('Honda')
+select * from marcas
+
 create table categoria(
 id_categoria int identity(1,1) primary key,
 nombre varchar(50) unique

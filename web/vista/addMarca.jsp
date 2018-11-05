@@ -1,6 +1,6 @@
 <%-- 
-    Document   : index
-    Created on : Nov 4, 2018, 6:22:28 PM
+    Document   : addMarca
+    Created on : Nov 4, 2018, 10:17:34 PM
     Author     : CandidoAcevedo
 --%>
 
@@ -12,7 +12,6 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>hola Amigos</h1>
-        <a href="MarcaController?accion=listar">Listar</a>
+        <h1>Hello World!</h1>
     </body>
 </html>
