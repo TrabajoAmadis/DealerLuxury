@@ -5,115 +5,95 @@
  */
 package DAO;
 
+import Interface.CRUD;
 import Models.Marca;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  *
  * @author CandidoAcevedo
  */
-public class MarcaDAO {
+public class MarcaDAO implements CRUD{
+    Conexion con = new Conexion();
+    Connection com;
+    PreparedStatement ps;
+    ResultSet rs;
+    Marca m = new Marca();
     
-    //Metodo para registrar una marca
-    public static boolean registrar(Marca marca){
-        try {
-            String sql = "insert into marcas(nombre) values(?)";
-            Connection con = Conexion.conectar();
-            PreparedStatement st = con.prepareStatement(sql);
-            st.setString(1, marca.getMarca());
-            if(st.executeUpdate() > 0){
-               return true; 
-            }else{
-                return false;
-            }          
-            
-        } catch (SQLException ex) {
-            return false;
-        }
-    }
-    
-    //Metodo para obtener todas las marcas
-    public List listarMarca(){
-        ArrayList<Marca>list = new ArrayList<>();
+    @Override
+    public List listar() {
+        ArrayList<Marca>list=new ArrayList();
         String sql = "select * from marcas";
-        try {            
-            Connection con = Conexion.conectar();
-            PreparedStatement st = con.prepareStatement(sql);
-            ResultSet resultado = st.executeQuery();         
-            Marca marca = new Marca();
-            while(resultado.next()){
-                marca = new Marca();
-                marca.setIdMarca(resultado.getInt("id_marca"));
-                marca.setMarca(resultado.getString("nombre"));
+        try {
+            com=con.conectar();
+            ps=com.prepareStatement(sql);
+            rs=ps.executeQuery();
+            while(rs.next()){
+                Marca marca = new Marca();
+                marca.setIdMarca(rs.getInt("id_marca"));
+                marca.setMarca(rs.getString("nombre"));
                 list.add(marca);
-            }            
-            return list;
-        } catch (SQLException ex) {
-            return list;
-        }
-    }
-    
-    //Metodo para buscar las marcas por nombres
-    public Marca buscar(String nombre){
-        Marca mar = null;
-        try {
-            String sql = "select * from marcas where nombre = ?";
-            Connection con = Conexion.conectar();
-            PreparedStatement st = con.prepareStatement(sql);
-            st.setString(1, nombre);            
-            ResultSet resultado = st.executeQuery();
-            while(resultado.next()){
-                mar = new Marca();
-                mar.setIdMarca(resultado.getInt("id_marca"));
-                mar.setMarca(resultado.getString("nombre"));
             }
-            st.close();
-            con.close();
-            resultado.close();
-        } catch (SQLException ex) {
-            
+        } catch (Exception e) {
         }
-        return null;
+        return list;
     }
-    
-    //Metodo para actualizar las marcas
-    public static boolean actualizar(Marca marca){
-        boolean update = false;
+
+    @Override
+    public Marca list(int id) {
+        String sql = "select * from marcas where id_marca="+id;
         try {
-            String sql = "update marcas set nombre=?";
-            Connection con = Conexion.conectar();
-            PreparedStatement st = con.prepareStatement(sql);
-            st.setString(1, marca.getMarca());
-            update = st.executeUpdate()>0;
-            st.close();
-            con.close();
-        } catch (SQLException ex) {
-            Logger.getLogger(MarcaDAO.class.getName()).log(Level.SEVERE, null, ex);
+            com=con.conectar();
+            ps=com.prepareStatement(sql);
+            rs=ps.executeQuery();
+            while(rs.next()){                
+                m.setIdMarca(rs.getInt("id_marca"));
+                m.setMarca(rs.getString("nombre"));
+                
+            }
+        } catch (Exception e) {
         }
-        return update;
+        return m;
+    }
+
+    @Override
+    public boolean agregar(Marca marca) {
+        String sql = "insert into marcas values('"+marca.getMarca()+"')";
+        try {
+            com=con.conectar();
+            ps=com.prepareStatement(sql);
+            ps.executeUpdate();
+        } catch (Exception e) {
+        }
+        return false;
+    }
+
+    @Override
+    public boolean editar(Marca marca) {
+        String sql = "update marcas set nombre='"+marca.getMarca()+"' where id_marca='"+marca.getIdMarca()+"'";
+        try {
+            com=con.conectar();
+            ps=com.prepareStatement(sql);
+            ps.executeUpdate();
+        } catch (Exception e) {
+        }
+        return false;
+    }
+
+    @Override
+    public boolean eliminar(int id) {
+        String sql = "delete from marcas where id_marca="+id;
+        try {
+            com=con.conectar();
+            ps=com.prepareStatement(sql);
+            ps.executeUpdate();
+        } catch (Exception e) {
+        }
+        return false;
     }
     
-    //Metodo para eliminar una marca
-    public static boolean eliminar(Marca marca){
-        boolean delete = false;
-        try {            
-            String sql = "delete from marcas where id=?";
-            Connection con = Conexion.conectar();            
-            PreparedStatement st = con.prepareStatement(sql);
-            st.setInt(1, marca.getIdMarca());
-            delete = st.executeUpdate()>0;
-            con.close();
-            st.close();
-        } catch (SQLException ex) {
-            Logger.getLogger(MarcaDAO.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        return delete;
-    }
 }

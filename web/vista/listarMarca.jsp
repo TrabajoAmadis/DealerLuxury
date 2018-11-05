@@ -18,6 +18,7 @@
     </head>
     <body>
         <h1>Personas</h1>
+        <a href="MarcaController?accion=add">Registrar uno nuevo</a>
         <div>
             <table border="1">
                 <thead>
@@ -28,7 +29,7 @@
                 </thead>
                 <%
                     MarcaDAO md = new MarcaDAO();
-                    List<Marca>list=md.listarMarca();
+                    List<Marca>list=md.listar();
                     Iterator<Marca>iter=list.iterator();
                     Marca marca=null;
                     while(iter.hasNext()){
@@ -41,8 +42,8 @@
                         <td><%=marca.getIdMarca()%></td>
                         <td><%= marca.getMarca() %></td>
                         <td>
-                            <a>editar</a>
-                            <a>eliminar</a>
+                            <a href="MarcaController?accion=editar&id=<%=marca.getIdMarca()%>">editar</a>
+                            <a href="MarcaController?accion=eliminar&id=<%= marca.getIdMarca() %>">eliminar</a>
                         </td>
                     </tr>
                     <%}%>

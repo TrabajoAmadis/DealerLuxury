@@ -13,5 +13,10 @@
     </head>
     <body>
         <h1>Hello World!</h1>
+        <form name="form" action="MarcaController">
+            Nombre: <br>
+            <input type="text" name="nombre" value="" /> 
+            <input type="submit" name="accion" value="Agregar" />
+        </form>
     </body>
 </html>
