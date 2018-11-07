@@ -13,8 +13,8 @@
     </head>
     <body>
         <h1>hola Amigos</h1>
-        <a href="MarcaController?accion=listar">Listar</a>
-        
+        <a href="MarcaController?accion=listar">Listar Marca</a>
+         <a href="UsuarioController?accion=list">Listar Usuario</a>
         <a href="CategoriaController?accion=lista">Listar Categoria</a>
     </body>
 </html>
