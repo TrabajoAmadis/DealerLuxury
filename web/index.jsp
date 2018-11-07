@@ -14,5 +14,7 @@
     <body>
         <h1>hola Amigos</h1>
         <a href="MarcaController?accion=listar">Listar</a>
+        
+        <a href="CategoriaController?accion=lista">Listar Categoria</a>
     </body>
 </html>

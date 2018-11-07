@@ -39,6 +39,8 @@ create table categoria(
 id_categoria int identity(1,1) primary key,
 nombre varchar(50) unique
 )
+insert into categoria values('4x4')
+insert into categoria values('Familiar')
 
 create table autos(
 serie_chasis varchar(50) primary key,
