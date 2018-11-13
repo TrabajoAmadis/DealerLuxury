@@ -4,25 +4,9 @@
         <servlet-name>MarcaController</servlet-name>
         <servlet-class>Controller.MarcaController</servlet-class>
     </servlet>
-    <servlet>
-        <servlet-name>UsuarioDAO</servlet-name>
-        <servlet-class>DAO.UsuarioDAO</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>UsuarioController</servlet-name>
-        <servlet-class>Controller.UsuarioController</servlet-class>
-    </servlet>
     <servlet-mapping>
         <servlet-name>MarcaController</servlet-name>
         <url-pattern>/MarcaController</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>UsuarioDAO</servlet-name>
-        <url-pattern>/UsuarioDAO</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>UsuarioController</servlet-name>
-        <url-pattern>/UsuarioController</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
