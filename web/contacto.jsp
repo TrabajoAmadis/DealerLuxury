@@ -1,12 +1,12 @@
 <%-- 
-    Document   : index
-    Created on : Nov 4, 2018, 6:22:28 PM
-    Author     : CandidoAcevedo
+    Document   : contacto
+    Created on : Nov 9, 2018, 3:34:04 PM
+    Author     : kelvi
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html lang="en">
+<html>
     <head>
         <meta charset="utf-8">
         <title>Autos Dealer Website</title>
@@ -22,9 +22,7 @@
         <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
         <link href="css/menustyle.css" rel="stylesheet">
     </head>
-
     <body>
-
         <!-- Menu -->
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
           <div class="container">
@@ -36,13 +34,13 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
               <ul class="navbar-nav ml-auto">
-                <li class="nav-item active">
-                  <a class="nav-link" href="#">Inicio</a>
+                <li class="nav-item">
+                  <a class="nav-link" href="index.jsp">Inicio</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="vehiculo.jsp">Vehículo</a>
                 </li>  
-                <li class="nav-item">
+                <li class="nav-item active">
                   <a class="nav-link" href="contacto.jsp">Contactos</a>
                 </li>
                 
@@ -78,52 +76,64 @@
                     </div>
                 </div>
             </div>
-        </div>   
-        
-        <!--Bootstrap Slider con Imagenes-->
-        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-            <ol class="carousel-indicators">
-              <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-              <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-              <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-              <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
-              <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
-              <li data-target="#carouselExampleIndicators" data-slide-to="5"></li>
-              <li data-target="#carouselExampleIndicators" data-slide-to="6"></li>
-            </ol>
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-              <img class="d-block w-100" src="img/img1.jpg">
-            </div>
-            <div class="carousel-item">
-              <img class="d-block w-100" src="img/img2.jpg">
-            </div>
-            <div class="carousel-item">
-              <img class="d-block w-100" src="img/img3.jpg">
-            </div>
-            <div class="carousel-item">
-              <img class="d-block w-100" src="img/img4.jpg">
-            </div>
-            <div class="carousel-item">
-              <img class="d-block w-100" src="img/img5.jpg">
-            </div>
-            <div class="carousel-item">
-              <img class="d-block w-100" src="img/img6.jpg">
+        </div> 
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="well well-sm">
+                        <form class="form-horizontal" method="post">
+                            <fieldset>
+                                <legend class="text-center header">Contactanos</legend>
+
+                                <div class="form-group">
+                                    <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
+                                    <div class="col-md-8">
+                                        <input id="nombre" name="name" type="text" placeholder="Nombre completo" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
+                                    <div class="col-md-8">
+                                        <input id="apellido" name="name" type="text" placeholder="Apellido" class="form-control">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <span class="col-md-1 col-md-offset-2 text-center">
+                                        <i class="fa fa-envelope-o bigicon"></i>
+                                    </span>
+                                    <div class="col-md-8">
+                                        <input id="correo" name="email" type="text" placeholder="Correo Electronico" class="form-control">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-phone-square bigicon"></i></span>
+                                    <div class="col-md-8">
+                                        <input id="telefono" name="phone" type="text" placeholder="Telefono" class="form-control">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-pencil-square-o bigicon"></i></span>
+                                    <div class="col-md-8">
+                                        <textarea class="form-control" id="mensaje" name="message" placeholder="Ingrese su mensaje para nosotros aquí. Nos pondremos en contacto con usted dentro de 2 días hábiles." rows="7"></textarea>
+                                    </div>
+                                </div>
+
+                                <div class="form-group1">
+                                    <div class="col-md-12 text-center">
+                                        <button type="enviar" class="btn btn-primary btn-lg">Enviar</button>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
             </div>
         </div>
-        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="sr-only">Next</span>
-        </a>
-            
-    </div>
-        
     </body>
-   
+    
     <!-- Footer -->
     <footer class="page-footer font-small mdb-color lighten-3 pt-4">
         <section id="lab_social_icon_footer">

@@ -1,13 +1,13 @@
 <%-- 
-    Document   : index
-    Created on : Nov 4, 2018, 6:22:28 PM
-    Author     : CandidoAcevedo
+    Document   : vehiculo
+    Created on : Nov 9, 2018, 3:38:36 PM
+    Author     : kelvin
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html lang="en">
-    <head>
+<html>
+     <head>
         <meta charset="utf-8">
         <title>Autos Dealer Website</title>
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -22,7 +22,6 @@
         <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
         <link href="css/menustyle.css" rel="stylesheet">
     </head>
-
     <body>
 
         <!-- Menu -->
@@ -36,10 +35,10 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
               <ul class="navbar-nav ml-auto">
-                <li class="nav-item active">
-                  <a class="nav-link" href="#">Inicio</a>
-                </li>
                 <li class="nav-item">
+                  <a class="nav-link" href="index.jsp">Inicio</a>
+                </li>
+                <li class="nav-item active">
                   <a class="nav-link" href="vehiculo.jsp">Vehículo</a>
                 </li>  
                 <li class="nav-item">
@@ -55,8 +54,8 @@
             </div>
           </div>
         </nav>
-
-        <!-- Modal -->
+        
+         <!-- Modal -->
         <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -78,52 +77,9 @@
                     </div>
                 </div>
             </div>
-        </div>   
-        
-        <!--Bootstrap Slider con Imagenes-->
-        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-            <ol class="carousel-indicators">
-              <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-              <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-              <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-              <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
-              <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
-              <li data-target="#carouselExampleIndicators" data-slide-to="5"></li>
-              <li data-target="#carouselExampleIndicators" data-slide-to="6"></li>
-            </ol>
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-              <img class="d-block w-100" src="img/img1.jpg">
-            </div>
-            <div class="carousel-item">
-              <img class="d-block w-100" src="img/img2.jpg">
-            </div>
-            <div class="carousel-item">
-              <img class="d-block w-100" src="img/img3.jpg">
-            </div>
-            <div class="carousel-item">
-              <img class="d-block w-100" src="img/img4.jpg">
-            </div>
-            <div class="carousel-item">
-              <img class="d-block w-100" src="img/img5.jpg">
-            </div>
-            <div class="carousel-item">
-              <img class="d-block w-100" src="img/img6.jpg">
-            </div>
-        </div>
-        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="sr-only">Next</span>
-        </a>
-            
-    </div>
-        
+        </div> 
     </body>
-   
+    
     <!-- Footer -->
     <footer class="page-footer font-small mdb-color lighten-3 pt-4">
         <section id="lab_social_icon_footer">
